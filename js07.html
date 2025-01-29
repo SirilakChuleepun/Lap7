@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex.7</title>
+</head>
+<body>
+    <h3>Student info</h3>
+    <button onclick="showStudentinfo()">Show info</button>
+    <div id="studentInfo"></div>
+    <script>
+        const student = {
+            name : "Sirilak",
+            age : 20,
+            grade: "2nd",
+            scores:{
+                math: 85,
+                science: 95,
+                english: 78,
+            },
+        };
+
+        function showStudentinfo() {
+            let info = document.getElementById("studentInfo");
+            info.innerHTML = `
+            name : ${student.name}<br>
+            age : ${student.age}<br>
+            grade : ${student.grade}<br>
+            scores :<br>
+            - math: ${student.scores.math}<br>
+            - science: ${student.scores.science}<br>
+            - english: ${student.scores.english}
+            `;
+        }
+    </script>
+</body>
+</html>
