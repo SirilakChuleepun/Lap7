@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตัวอย่างที่3</title>
+</head>
+<body>
+    <h3>คำนวณพื้นที่สี่เหลี่ยม</h3>
+    <input type="number" id="width" /><br />
+    <input type="number" id="lenght" /><br />
+    <button onclick="calculateArea()">คำนวณ</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateArea() {
+            let width = document.getElementById("width").value;
+            let lenght = document.getElementById("lenght").value;
+
+            let area = width * lenght;
+
+            document.getElementById("result").textContent = "พื้นที่สี่เหลี่ยม = " + area + "ตารางหน่วย";
+            
+        }
+    </script>
+    
+</body>
+</html>
