@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex.16</title>
+</head>
+<body>
+    <div id="example16">
+        <h3>16.slide show images</h3>
+        <div class="slideshow">
+            <div>
+                <img id="slideImage" src="https://motoringworld.in/wp-content/uploads/2022/12/Kawasaki-Ninja-400-web4.jpg" alt="slideshow" />
+            </div>
+            <button onclick="changeSlide(-1)">Previous</button>
+            <button onclick="changeSlide(1)">Next</button>
+        </div>
+
+        <style>
+            .slideshow {
+                text-align: center;
+            }
+            .slideshow img {
+                max-width: 400px;
+                height: 300px;
+                margin: 10px;
+            }
+        </style>
+        <script>
+            const images = [
+                "https://cdn.bikedekho.com/processedimages/kawasaki/ninja-400/494X300/ninja-40062b2c5cfde9df.jpg?imwidth=412&impolicy=resize",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Kawasaki_Ninja_400_KRT_SlantView_resized.jpg/800px-Kawasaki_Ninja_400_KRT_SlantView_resized.jpg",
+                "https://ic.maxabout.us//misc/infographics/bike-infographics//Launch-vs-Current-Price-Kawasaki-Ninja-300.jpg",
+            ];
+            let currentSlide = 0;
+
+            function changeSlide(direction) {
+                currentSlide = (currentSlide + direction + images.length) % images.length;
+                document.getElementById("slideImage").src = images[currentSlide];
+            }
+        </script>
+    </div>
+</body>
+</html>
