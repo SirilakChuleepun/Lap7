@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex.18</title>
+</head>
+<body>
+    <div id="example18">
+        <h3>search info</h3>
+        <input
+            type="text"
+            id="searchInput"
+            onkeyup="searchItem()"
+            placeholder="Search..."
+        />
+        <ul id="itemList">
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>orenge</li>
+            <li>mango</li>
+            <li>Strawberry</li>
+        </ul>
+
+        <script>
+            function searchItem() {
+                const searchText = document
+                    .getElementById("searchInput")
+                    .value.toLowerCase();
+                const items = document
+                    .getElementById("itemList")
+                    .getElementsByTagName("li");
+
+                for (let item of items) {
+                    const text = item.textContent.toLowerCase();
+                    item.style.display = text.includes(searchText) ? "" : "none";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
