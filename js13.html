@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex.13</title>
+</head>
+<body>
+    <div id="example13">
+        <h3>My lish to shop</h3>
+        <input type="text" id="iteminput" placeholder="Enter product name " />
+        <button onclick="additem()">Add item</button>
+        <ul id="shoppingLish"></ul>
+
+        <script>
+            function additem() {
+                const input = document.getElementById("iteminput");
+                const itemName = input.value.trim();
+
+                if (itemName !== "") {
+                    const li = document.createElement("li");
+                    li.textContent = itemName;
+
+                    const deleteBtn = document.createElement("button");
+                    deleteBtn.textContent = "Delete";
+                    deleteBtn.onclick = function () {
+                        li.remove();
+                    };
+
+                    li.appendChild(deleteBtn);
+                    document.getElementById("shoppingLish").appendChild(li);
+                    input.value = "";
+                    
+                }
+                
+            }
+        </script>
+        <style>
+            #shoppingLish li {
+                margin: 5px 0;
+            }
+            #shoppingList button{
+                margin-left: 10px;
+            }
+        </style>
+    </div>
+</body>
+</html>
